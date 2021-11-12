@@ -1,0 +1,64 @@
+<html>
+	<!--
+	*
+	*   Thanks for taking the time to do this test! The task is to create an individualized notepad
+	*	that is append only. Specifically we would like the user to be able to create entries that
+	*	consist of tags, text, and a timestamp. The user specifies one or more tags, some text, and the
+	*	timestamp is populated automatically. We would like to use local storage to store the entries.
+	*	We would also like to leverage the local storage to remember previous tags and to automatically
+	*	suggest them when typing in the tags field. Finally we want to it to look pretty, we don't want
+	*	to allow duplicate posts, and we want to optimize the rendering to only draw the minimal amount
+	*	necessary when adding a post.
+	*
+	*	To this end you can use whatever libraries you want, whatever frameworks you want, and you can
+	*	change the index.html, script.js, and style.css files however you see fit to best achieve the
+	*	task. You can even use a css extension language like sass if you want.
+	*	
+	*	You have three hours. Don't worry if you don't finish everything, just do your best and prioritize
+	*	the things you feel add the most value. If you need some extra time to reach a complete solution,
+	*	then go for it; but please provide an explanation in your submission.
+	*	
+	*	If you have any questions, feel free to email us. Once you are complete, zip up the solution and
+	*	upload it to the google drive folder mentioned in the email that you received to start this test.
+	*
+	-->
+	<head>
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+		 integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+		 crossorigin="anonymous"></script>
+		 <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+		 <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.13.1/underscore-min.js" 
+		 integrity="sha512-ZuOjyqq409+q6uc49UiBF3fTeyRyP8Qs0Jf/7FxH5LfhqBMzrR5cwbpDA4BgzSo884w6q/+oNdIeHenOqhISGw==" 
+		 crossorigin="anonymous" 
+		 referrerpolicy="no-referrer"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+		 integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+		 crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
+		 integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ=="
+		 crossorigin="anonymous"></script>
+		<script type="text/javascript" src="script.js"></script>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" 
+		integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" 
+		crossorigin="anonymous">
+		<link rel="stylesheet" href="//code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
+		<link type="text/css" rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<h1>Posts</h1>
+		<table class="table table-striped table-bordered" id="postsTable">
+			<thead>
+				<td>Tags</td>
+				<td>Text</td>
+				<td>Time</td>
+			<thead>
+			<tbody id="postsBody">
+			</tbody>
+			<tfoot>
+				<td><input class="form-control" placeholder="Enter tags separated by commas..." id="postTag" type="text" /></td>
+				<td><input class="form-control" placeholder="Enter text..." id="postText" type="text" /></td>
+				<td><button class="btn btn-primary" id="postSubmit" type="button">Post</button></td>
+			</tfoot>
+		</table>
+	</body>
+</html>
